@@ -1,3 +1,3 @@
 # Algo!
 
-## Justs keep grinding!!
+## Just keep grinding!!
