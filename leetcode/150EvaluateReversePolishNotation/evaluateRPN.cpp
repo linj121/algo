@@ -6,31 +6,31 @@
 class Solution {
 public:
     int evalRPN(std::vector<std::string>& tokens) {
-        std::stack<int> prnStack;
+        std::stack<int> rpnStack;
 
         for (const std::string& token : tokens) {
             if (token == "+") {
-                int secondArg = prnStack.top(); prnStack.pop();
-                int firstArg = prnStack.top(); prnStack.pop();
-                prnStack.push(firstArg + secondArg);
+                int secondArg = rpnStack.top(); rpnStack.pop();
+                int firstArg = rpnStack.top(); rpnStack.pop();
+                rpnStack.push(firstArg + secondArg);
             } else if (token == "-") {
-                int secondArg = prnStack.top(); prnStack.pop();
-                int firstArg = prnStack.top(); prnStack.pop();
-                prnStack.push(firstArg - secondArg);
+                int secondArg = rpnStack.top(); rpnStack.pop();
+                int firstArg = rpnStack.top(); rpnStack.pop();
+                rpnStack.push(firstArg - secondArg);
             } else if (token == "/") {
-                int secondArg = prnStack.top(); prnStack.pop();
-                int firstArg = prnStack.top(); prnStack.pop();
-                prnStack.push(firstArg / secondArg);
+                int secondArg = rpnStack.top(); rpnStack.pop();
+                int firstArg = rpnStack.top(); rpnStack.pop();
+                rpnStack.push(firstArg / secondArg);
             } else if (token == "*") {
-                int secondArg = prnStack.top(); prnStack.pop();
-                int firstArg = prnStack.top(); prnStack.pop();
-                prnStack.push(firstArg * secondArg);
+                int secondArg = rpnStack.top(); rpnStack.pop();
+                int firstArg = rpnStack.top(); rpnStack.pop();
+                rpnStack.push(firstArg * secondArg);
             } else {
-                prnStack.push(std::stoi(token));
+                rpnStack.push(std::stoi(token));
             }
         }
 
-        return prnStack.top();
+        return rpnStack.top();
     }
 };
 
