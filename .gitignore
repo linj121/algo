@@ -1,2 +1,6 @@
 .vscode
 **/*.exe
+
+# Python
+__pycache__/
+*.py[cod]
